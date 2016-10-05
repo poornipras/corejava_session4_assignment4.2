@@ -1,0 +1,27 @@
+Answer: 
+The below program will not compile becauses of the placement of the main().
+main() should be the entry point to a program.
+If main() was on the first part of the program before the parent class then the output will print
+Parent's method2() and followed by Parent's method1().
+
+so answer is a) Compile time error.
+
+
+class Parent{
+private void method1(){
+ System.out.println ("Parent's method1()");
+}
+public void method2() {
+ System.out.println ("Parent's method2()");
+method1();
+}
+}
+ class Child extends Parent {
+ public void method1() {
+ System.out.println ("Child's method1()");
+} 
+
+public static void main(String args[]) {
+Parent p = new Child();
+p.method2();
+}}
